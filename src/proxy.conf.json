@@ -1,0 +1,10 @@
+{
+    "/jokes_api": {
+    "target": "https://api.api-ninjas.com/v1/jokes?limit=1",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+        "^/jokes_api": ""
+      }
+    }
+}
