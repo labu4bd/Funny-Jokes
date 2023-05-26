@@ -15,6 +15,7 @@ export interface DialogData {
 export class AppComponent implements OnInit{
   title = 'Funny-Jokes';
   joke: string = 'Here is a Joke';
+  all_jokes:Joke[]=[];
 
   constructor(private appService: AppService, public dialog: MatDialog) {}
   ngOnInit() {
@@ -32,7 +33,9 @@ export class AppComponent implements OnInit{
   openDialogWithJoke(enterAnimationDuration: string, exitAnimationDuration: string): void{
     this.appService.getJokes().subscribe((jokes) => {
       this.joke=jokes[0].joke;
+      this.all_jokes.push(jokes[0]);
       console.log('Joke: ',jokes);
+      console.log('All Joke: ',this.all_jokes);
       this.dialog.open(ShowJokeDialog, {
         data: {joke: this.joke},
         width: '250px',

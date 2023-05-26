@@ -9,3 +9,10 @@ button {
 .dialogContainer{
     margin: 10px !important;
 }
+.toolbarLogo{
+    position: initial !important;
+}
+.joke-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+}
