@@ -19,10 +19,9 @@ export class AppService {
     //this.handleError = httpErrorHandler.createHandleError('UsersService');
   }
 
-  /** GET users from the server */
+  /** GET jokes from the server */
   getJokes(): Observable<Joke[]> {
-    return this.http.get<Joke[]>(this.usersUrl, {headers:  this.headers})
-      //.pipe(catchError(this.handleError('getUsers', [])));
+    return this.http.get<Joke[]>(this.usersUrl, {headers:  this.headers});
   }
 
 }

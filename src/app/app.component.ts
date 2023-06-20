@@ -24,18 +24,16 @@ export class AppComponent implements OnInit{
 
   //get jokes
   getJokes(): void {
-
     this.appService.getJokes().subscribe((jokes) => {
-
       console.log('Joke: ',jokes);
     });
   }
+
+  // open a dialog box with joke
   openDialogWithJoke(enterAnimationDuration: string, exitAnimationDuration: string): void{
     this.appService.getJokes().subscribe((jokes) => {
       this.joke=jokes[0].joke;
       this.all_jokes.push(jokes[0]);
-      console.log('Joke: ',jokes);
-      console.log('All Joke: ',this.all_jokes);
       this.dialog.open(ShowJokeDialog, {
         data: {joke: this.joke},
         width: '250px',
